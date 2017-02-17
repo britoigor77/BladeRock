@@ -110,7 +110,6 @@ public class TelaPrincipal extends JFrame{
         
         if(c instanceof MusicChoice)
         {
-            System.out.println("ZZZZZZZZZZZ  CHEGEUI EM TOCA MUISCA ZZZZZZZZZZZZz");
             ((MusicChoice)c).playMusic();
         }
     }
