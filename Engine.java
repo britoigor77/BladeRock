@@ -231,7 +231,7 @@ public class Engine {
         Choice escolhaAvancar3 = new BlankChoice("IR PARA O ESTACIONAMENTO.", eventoEstacionamento);
         escolhaVitoriaEmo.add(escolhaAvancar3);
         
-        Event eventoVitoriaEmo = new BlankEvent("Você arrancou o coro daquele viadinho."
+        Event eventoVitoriaEmo = new BlankEvent("Você arrancou o coro daquele emo."
                 + "Paul disse que membros das bandas eliminadas se aliaram a sua banda adversária"
                 + "e provavelmente devem ter pego o resto da Blade Rock também. Ele disse que seus amigos tinham "
                 + "ido ao estacionamento antes de sumirem. Então eles provavelmente estão por lá.", escolhaVitoriaEmo, TipoFase.BATTLE);
@@ -396,7 +396,7 @@ public class Engine {
         escolhaVitoria.add(escolhaAvancar);
         
         Event eventoVitoria = new BlankEvent("Você derrotou o inimigo e ganhou + 3 pts de attack."
-                + "O funkeirozinho voltou pra cracolândia", escolhaVitoria, TipoFase.BATTLE);
+                + "O funkeirozinho voltou chorando pro baile funk!", escolhaVitoria, TipoFase.BATTLE);
       
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                   //FLORESTA
