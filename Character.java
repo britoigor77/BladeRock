@@ -37,7 +37,6 @@ public class Character {
     public void takeDamage(int attack) {
         
         this.life -= attack;
-        System.out.println("sofri dano FGIFTUSSTHAJTA de " + attack);
     }
     
     public void setAttack(int attack)
