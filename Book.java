@@ -46,7 +46,6 @@ public class Book {
             
             if(this.eventActually instanceof BattleEvent)
             {
-                        System.out.println("É BATALHA");
             		((BattleEvent) this.eventActually).applyBattle(player);
             		
                         
@@ -69,7 +68,6 @@ public class Book {
                         Event gameOver = new BlankEvent("Game Over", new ArrayList<Choice>(), TipoFase.NOTHING);
                         this.eventActually = gameOver;
                     }
-                    System.out.println("escolha verdadeira");
                     return true;
             }
          }
