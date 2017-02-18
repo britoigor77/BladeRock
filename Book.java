@@ -37,13 +37,10 @@ public class Book {
 
     public boolean nextEvent(int number) {
         Choice choice = this.selectChoice(number);
-
         if(choice != null) {
             choice.executeChoice(player);
             
-         if( !(choice instanceof InformChoice) ){
-            
-            
+
             if(this.eventActually instanceof BattleEvent)
             {
             		((BattleEvent) this.eventActually).applyBattle(player);
@@ -62,6 +59,7 @@ public class Book {
                     if(player.isAlive()) {
                         this.eventActually = choice.getEvent();
                          this.eventActually.applyHistory(player);
+                         
                     }
                     
                     else {
@@ -70,7 +68,7 @@ public class Book {
                     }
                     return true;
             }
-         }
+         
         
         }
         return false;
