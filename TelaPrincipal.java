@@ -112,10 +112,9 @@ public class TelaPrincipal extends JFrame{
     public void recomeca(Book book)
     {
         book.resetHistory();
-       // Event novoEvento = book.getEventActually();
         limpaTela(painel);
-        Painel painel = new Painel();
-        painel.TelaInicial(this, painel, book, getNumBotoes(book));
+        book.getPlayer().setLive(15);
+        telaJogo(book, getNumBotoes(book));
     }
     
     
