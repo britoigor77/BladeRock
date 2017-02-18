@@ -4,19 +4,24 @@ import java.util.ArrayList;
 
 public class Player extends Character {
 
-    private int life;
     private ArrayList itens;
     
-    public Player(int life, int attack) {
-        super(life, attack);
-        this.life = life;
+    
+    public Player(int life, int atk) {
+        super(life, atk);
         this.itens = new ArrayList(); 
     }
 
-   
-    
-    public int getLife() {
-        return life;
+    public ArrayList getItens() {
+        return itens;
+    }
+
+    public void setItens(ArrayList itens) {
+        this.itens = itens;
     }
     
+   public void somaAtk(Item i)
+   {
+       this.setAttack(this.getAttack() + i.getAtk() );
+   }
 }
