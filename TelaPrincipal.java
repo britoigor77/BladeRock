@@ -125,7 +125,6 @@ public class TelaPrincipal extends JFrame{
         
         if(c instanceof MusicChoice)
         {
-            System.out.println("ZZZZZZZZZZZ  CHEGEUI EM TOCA MUISCA ZZZZZZZZZZZZz");
             ((MusicChoice)c).playMusic();
         }
     }
@@ -133,8 +132,6 @@ public class TelaPrincipal extends JFrame{
     public void addItens(Book book, Event evento, int numEscolha)
     {
          //VERIFICA FASE PRA ADICIONAR ITANS
-        System.out.println("adicionei item");
-        System.out.println("Ó o tipo aqui mlk ----->>>" +evento.getTipo());
         if(evento.getTipo() == TipoFase.MUSIC)
         {
             //Choice c =(MusicChoice)((BlankEvent) book.getEventActually()).findChoice(numEscolha); 
@@ -142,7 +139,6 @@ public class TelaPrincipal extends JFrame{
             
              MusicChoice m =(MusicChoice)((BlankEvent) book.getEventActually()).findChoice(numEscolha); 
              m.playMusic();
-            System.out.println("Mandei tocar a musica TCHTCHE");
         }
         
          if(evento.getTipo() == TipoFase.GANHA_MICROFONE)
@@ -309,7 +305,6 @@ public class TelaPrincipal extends JFrame{
          {   
              numBotoes++;
          }
-         System.out.println("ME IMPORTEI COM O NUM DE BOTOÕES   :----" + numBotoes );
         return numBotoes;
     }
     
