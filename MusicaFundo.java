@@ -12,24 +12,38 @@ public class MusicaFundo {
     public static class AL implements ActionListener{
         public final void actionPerformed(ActionEvent e)
         {
-//              String endereco= "jimi2.wav";
-//            music(endereco);
+
         }
     }
     
+    AudioPlayer MGP = AudioPlayer.player;  
+    AudioStream BGM = null;  
     
-    public  void music(String endereco) {  
-        System.out.println("CHEGUEI NAS MUSICAS");
-        AudioPlayer MGP = AudioPlayer.player;  
-        AudioStream BGM = null;  
-        try {  
+    public void aciona()
+    {
+       try {  
         BGM = new AudioStream(new FileInputStream(endereco));  
         } catch(IOException error) {  
             System.out.println("Error!!!");  
-        }  
-  
-        MGP.start(BGM);   
+        }   
+    }
+    private String endereco;
+    
+    public  void music(String endereco, boolean ligado) {  
+        System.out.println("CHEGUEI NAS MUSICAS");
+        
+        this.endereco = endereco;
+            
+        if(ligado == true)
+        {
+            aciona();
+            MGP.start(BGM);
+        }
+            
+        else
+        {
+            MGP.stop(BGM);
+        }     
     }  
+    
 }
-
-
