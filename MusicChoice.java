@@ -14,8 +14,12 @@ public class MusicChoice extends Choice{
     
     public void playMusic()
     {
-        this.musicFundo.music(this.enderecoMusica);
-        System.out.println("MANDEI TOCAR A MUSICA............................................");
+        this.musicFundo.music(this.enderecoMusica, true);
+    }
+    
+    public void stopMusic()
+    {
+        this.musicFundo.music(this.enderecoMusica, false);
     }
     
     public String getEnderecoMusica()
@@ -29,3 +33,4 @@ public class MusicChoice extends Choice{
     }
     
 }
+
