@@ -15,21 +15,12 @@ public class Engine {
         tela.setVisible(true);
         tela.TelaInicial(book);
         
-        //MusicaFundo music = new MusicaFundo();
-        //music.music("jimi2.wav");
-        
-//        while(!tela.começaJogo())
-//            System.out.println("NA HISTÓRIA");
-        
-       // tela.telaJogo(book, tela.getNumBotoes(book));
-       //do {//} while(!book.isTheEnd());
-//        System.out.println(book.showHistory());
-        
     }
 
     public static Book createBook() {
         
         Event eventoFinal = new BlankEvent("PERDEU OTÁRIO.",  new ArrayList<Choice>(), TipoFase.LOSE);
+        Event eventoFinalFunk = new BlankEvent("VIRAR FUNKEIRO È SUICÍDIO. GAME OVER...",  new ArrayList<Choice>(), TipoFase.LOSE);
         Event eventoMorreuCarro = new BlankEvent("NA TENTATIVA DE TOMAR O VOLANTE O CARRO CAPOTOU E "
                 + "EXPLODIU. GAME OVER.", new ArrayList<Choice>(), TipoFase.LOSE);
         Event eventoFinalDormiu = new BlankEvent("ENQUANTO VOCÊ DORMIA, FUNKEIROS TE SEQUESTRARAM E TE TORTURARAM"
@@ -40,11 +31,11 @@ public class Engine {
         Event eventoFinalFunkeiro = new BlankEvent("PERDEU TROUXA", new ArrayList<Choice>(), TipoFase.LOSE);
         
         Character player = new Player(15, 3);
-        Character funkeiro = new Enemy(7, 2, "Funkeiro");
-        Character pagodeiro = new Enemy(6, 2, "Pagodeiro");
-        Character emo = new Enemy(6, 2, "Emo");
-        Character capanga1 = new Enemy(6, 3, "Capanga1");
-        Character capanga2 = new Enemy(6, 4, "Capanga2");
+        Enemy funkeiro = new Enemy(7, 2, "Funkeiro", TipoInimigo.FUNKEIRO);
+        Enemy pagodeiro = new Enemy(6, 2, "Pagodeiro", TipoInimigo.PAGODEIRO);
+        Enemy emo = new Enemy(6, 2, "Emo", TipoInimigo.EMO);
+        Enemy capanga1 = new Enemy(6, 3, "Capanga1", TipoInimigo.CAPANGA);
+        Enemy capanga2 = new Enemy(6, 4, "Capanga2", TipoInimigo.CAPANGA);
         
         //ATQUES NA BATLHA
         Choice escolhaGuitarrada = new BattleChoice("Guitarrada");
@@ -206,8 +197,8 @@ public class Engine {
         escolhasDireita.add(escolhaProcurarCarro);
         escolhasDireita.add(escolhaProcurarEsquerda);
        
-        Event eventoDireita = new BlankEvent("Opa! Seguindo este caminho você encontrou um microfone sônico.",
-                escolhasDireita, TipoFase.GAIN_ITEN);
+        Event eventoDireita = new BlankEvent("Opa! Seguindo este caminho você encontrou um microfone sônico. +3pts de ATK",
+                escolhasDireita, TipoFase.GANHA_MICROFONE);
         
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
@@ -255,9 +246,9 @@ public class Engine {
         escolhasProdutor2.add(escolhaBatera);
         escolhasProdutor2.add(escolhaDesiste);
        
-        Event eventoProdutor2 = new BlankEvent("Impressionado com sua determinação o produtor lhe deu um conjunto de "
-                + "palhetas de ferro. O que fazer?",
-                escolhasProdutor2, TipoFase.NOTHING);
+        Event eventoProdutor2 = new BlankEvent("Impressionado com sua determinação o produtor lhe deu um acordamento de "
+                + "guitarra completo. +2 pts de ATK . O que fazer?",
+                escolhasProdutor2, TipoFase.GANHA_ACORDAMENTO);
         
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                         //PRODUTOR
@@ -335,7 +326,8 @@ public class Engine {
         
         Event eventoVitoriaPagode = new BlankEvent("Você deu uma surra nele! O pagodeiro foi chorando pra casa e deixou cair."
                 + "um kit de palhetas metalizadas, que ele provavelmente iria usar par tocar um cavaquinho ferrado"
-                + ". + 2pts de ATk. ... Seus amigos chegaram. O carro foi consertado. ", escolhaVitoriaPagode, TipoFase.BATTLE);
+                + ". + 3pts de ATk. ... Seus amigos chegaram. O carro foi consertado. ", escolhaVitoriaPagode,
+                TipoFase.GANHA_PALHETA);
                                     
      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                     //BATALHA COM O PAGORDEIRO
@@ -359,7 +351,7 @@ public class Engine {
         
          Event eventoFugi = new BlankEvent("Ufa! Isso foi Hard Core! Bem, após sua fuga do motorista louco"
                  + ", você está numa rua meio deserta, mas felizmente se pode avistar de longe os estúdios"
-                 + "da Music Show Time. O que vai fazer agora ?", escolhasFugi, TipoFase.DAMAGE);  
+                 + "da Music Show Time. O que vai fazer agora ?", escolhasFugi, TipoFase.NOTHING);  
          
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                     //PULEI DO UBER
@@ -396,7 +388,7 @@ public class Engine {
         escolhaVitoria.add(escolhaAvancar);
         
         Event eventoVitoria = new BlankEvent("Você derrotou o inimigo e ganhou + 3 pts de attack."
-                + "O funkeirozinho voltou chorando pro baile funk!", escolhaVitoria, TipoFase.BATTLE);
+                + "O funkeirozinho voltou chorando pro baile funk.", escolhaVitoria, TipoFase.BATTLE);
       
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                   //FLORESTA
@@ -468,7 +460,7 @@ public class Engine {
         ArrayList escolhasIniciais = new ArrayList<Choice>();
         Choice musicaPurple = new MusicChoice("Sair de casa e ir para o local do concerto", eventoRua, "jimi2.wav");
         Choice musicaEverlong = new MusicChoice("Ficar em casa e descansar um pouco", eventoCasa, "everlong.wav");
-        Choice musicaEnter = new MusicChoice("Virar funkeiro", eventoFinal, "byTheWay2.wav");
+        Choice musicaEnter = new MusicChoice("Virar funkeiro", eventoFinalFunk, "byTheWay2.wav");
         escolhasIniciais.add(musicaPurple);
         escolhasIniciais.add(musicaEverlong);
         escolhasIniciais.add(musicaEnter);
