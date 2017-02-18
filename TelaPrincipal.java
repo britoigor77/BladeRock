@@ -12,7 +12,6 @@ import Codigos.Item;
 import Codigos.MusicChoice;
 import Codigos.Player;
 import Codigos.TipoFase;
-import Musica.MusicaFundo;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -116,6 +115,11 @@ public class TelaPrincipal extends JFrame{
        //book.resetHistory();
         limpaTela(painel);
         book.getPlayer().setLive(15);
+        book.getPlayer().setAttack(3);
+        
+        for(int i = 0; i < book.getPlayer().getItens().size(); i++)
+             book.getPlayer().getItens().remove(i);
+        
         this.music.stopMusic();
         
         telaJogo(book, getNumBotoes(book));
@@ -132,7 +136,6 @@ public class TelaPrincipal extends JFrame{
              m.playMusic();
             this.enderecoMusica = m.getEnderecoMusica();
             this.music = m;
-            System.out.println("Mandei tocar a musica TCHTCHE");
         }
         
          if(evento.getTipo() == TipoFase.GANHA_MICROFONE)
@@ -276,7 +279,6 @@ public class TelaPrincipal extends JFrame{
          {   
              numBotoes++;
          }
-         System.out.println("ME IMPORTEI COM O NUM DE BOTOÕES   :----" + numBotoes );
         return numBotoes;
     }
     
