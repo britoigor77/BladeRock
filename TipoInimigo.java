@@ -1,4 +1,3 @@
-package Codigos;
 
 public enum TipoInimigo {
     FUNKEIRO("O funkeiro puxou o celular e botou pta tocar um proibidão."), 
