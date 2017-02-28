@@ -1,4 +1,3 @@
-package Codigos;
 
 public enum TipoFase {
     MUSIC(0),LOSE(0),WON(0), NOTHING(0), BATTLE(2), BATTLE2(3), HEAL(3), HEAL2(5), DAMAGE(3), DAMAGE2(0), TRANSITION(0)
