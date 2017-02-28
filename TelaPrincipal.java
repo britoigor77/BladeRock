@@ -1,17 +1,4 @@
-package Telas;
 
-import Codigos.BattleEvent;
-import Codigos.BlankEvent;
-import Codigos.Book;
-import Codigos.Character;
-import Codigos.Choice;
-import Codigos.Enemy;
-import Codigos.Engine;
-import Codigos.Event;
-import Codigos.Item;
-import Codigos.MusicChoice;
-import Codigos.Player;
-import Codigos.TipoFase;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
