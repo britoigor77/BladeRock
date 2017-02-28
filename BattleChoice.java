@@ -1,4 +1,3 @@
-package Codigos;
 
 public class BattleChoice extends Choice {
     
