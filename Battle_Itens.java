@@ -1,4 +1,3 @@
-package Codigos;
 
 public class Battle_Itens extends Itens{
 
