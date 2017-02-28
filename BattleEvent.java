@@ -24,7 +24,7 @@ public class BattleEvent extends Event {
 	public void applyBattle(Character a){
             this.player = a;
             a.battle(this.getEnemy());
-            System.out.println("VIDA DO PLAYER: " + a.getLive());
+
 	}
 
 	public Character getEnemy() {
