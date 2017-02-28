@@ -1,8 +1,4 @@
-package Telas;
 
-import Codigos.Book;
-import Codigos.Choice;
-import Codigos.Engine;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
