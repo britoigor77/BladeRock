@@ -1,4 +1,3 @@
-package Codigos;
 
 public class BlankChoice extends Choice {
     public BlankChoice(String description, Event event) {
